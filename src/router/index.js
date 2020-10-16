@@ -11,7 +11,7 @@ const routes = [{
     children: [{
       path: "/",
       component: () =>
-        import('../views/main/MainTop.vue'),
+        import('../views/main/Main.vue'),
     }]
 
   },

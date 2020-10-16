@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <h1>Hello</h1>
+  <div class="get-photo">
+    <v-img :src="url" alt="photos" class="photo" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Main',
+  props: ['url'],
 };
 </script>
 
