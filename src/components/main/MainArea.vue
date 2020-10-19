@@ -61,8 +61,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.visual {
-}
+
 .icon-box {
   display: flex;
   justify-content: space-between;

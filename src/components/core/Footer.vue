@@ -36,8 +36,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-footer {
+head footer {
   max-width: 560px;
+  min-width: 560px;
+  width: 560px;
   margin: 0 auto;
 }
 .icon-box {

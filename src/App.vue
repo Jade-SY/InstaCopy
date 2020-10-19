@@ -16,6 +16,9 @@ export default {
 };
 </script>
 <style lang="scss">
+#app {
+  overflow: hidden;
+}
 // 뷰티파이의 기능적인 css를 무시하고 최우선순위로 적용해야하는 css의 경우
 // !important와 함께 이곳에 작성하되 주의를 요한다.
 .plus-badge > span > span {
