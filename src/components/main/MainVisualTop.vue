@@ -1,9 +1,9 @@
 <template>
   <div class="visual-userProfile">
     <v-avatar size="40">
-      <v-img :src="content.userProfile.img"></v-img>
+      <v-img :src="img"></v-img>
     </v-avatar>
-    <p class="user-name">{{ content.userProfile.name }}</p>
+    <p class="user-name">{{ name }}</p>
     <v-spacer></v-spacer>
     <v-btn class="triple-dots" color="black" depressed icon>
       <v-icon>mdi-dots-horizontal</v-icon>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  props: ['userProfile'],
+  props: ['img', 'name'],
 };
 </script>
 
@@ -26,7 +26,8 @@ export default {
   padding: 5px;
   p {
     font-weight: bold;
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-top: 12px;
   }
 }
 </style>

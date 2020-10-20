@@ -25,7 +25,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'CoreAppBar',
+};
 </script>
 
 <style lang="scss" scoped>

@@ -55,7 +55,7 @@ export default new Vuex.Store({
         img: 'https://img6.yna.co.kr/photo/yna/YH/2018/06/04/PYH2018060410990001300_P2.jpg'
       },
     ],
-    post: [{
+    posts: [{
         userProfile: {
           name: 'iu',
           img: 'https://akns-images.eonline.com/eol_images/Entire_Site/2019630/rs_600x600-190730011745-e-asia-IU-youtube-million-thumbnails.jpg?fit=around|1080:1080&output-quality=90&crop=1080:1080;center,top',

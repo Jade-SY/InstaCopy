@@ -27,7 +27,7 @@
 <script>
 import { mapState } from 'vuex';
 export default {
-  name: 'Main',
+  name: 'MainTop',
   computed: { ...mapState(['stories', 'myProfile']) },
 };
 </script>

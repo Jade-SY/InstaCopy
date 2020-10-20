@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'CoreFooter',
+  name: 'Footer',
   data() {
     return {
       tabs: [
@@ -35,16 +35,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-head footer {
-  max-width: 560px;
-  min-width: 560px;
-  width: 560px;
-  margin: 0 auto;
-}
-.icon-box {
-  width: 98%;
-  display: flex;
-  justify-content: space-around;
-}
-</style>
+<style lang="scss" scoped></style>

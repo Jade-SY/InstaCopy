@@ -24,6 +24,7 @@
 <script>
 import { mapState } from 'vuex';
 export default {
+  name: 'StorySlider',
   computed: { ...mapState(['stories', 'myProfile']) },
 };
 </script>

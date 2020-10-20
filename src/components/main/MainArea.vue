@@ -1,17 +1,10 @@
 <template>
   <div class="main-area">
     <section class="visual" v-for="(content, i) in post" :key="i">
-      <main-visual-top></main-visual-top>
-      <div class="visual-userProfile">
-        <v-avatar size="40">
-          <v-img :src="content.userProfile.img"></v-img>
-        </v-avatar>
-        <p class="user-name">{{ content.userProfile.name }}</p>
-        <v-spacer></v-spacer>
-        <v-btn class="triple-dots" color="black" depressed icon>
-          <v-icon>mdi-dots-horizontal</v-icon>
-        </v-btn>
-      </div>
+      <main-visual-top
+        :img="content.userProfile.img"
+        :name="content.userProfile.name"
+      ></main-visual-top>
       <div class="img-box">
         <v-img :src="content.content.img"></v-img>
       </div>
@@ -34,9 +27,16 @@
         </div>
       </div>
       <div class="like-box">
-        <p>{{ content.like[0] }}님 외 <span>여러명</span>이 좋아합니다</p>
+        <p>
+          {{ content.like[0] }}님
+          <router-link to="../main/Like.vue"><span>여러명</span></router-link
+          >이 좋아합니다
+        </p>
+        <div class="comment-box" v-for="(el, i) in content" :key="i">
+          <h3>{{ el.name }}</h3>
+          <h3>{{ el.text }}</h3>
+        </div>
       </div>
-      <p></p>
     </section>
   </div>
 </template>
@@ -44,6 +44,7 @@
 <script>
 import { mapState } from 'vuex';
 export default {
+  name: 'MainArea',
   components: {
     MainVisualTop: () => import('../main/MainVisualTop.vue'),
   },
@@ -61,20 +62,15 @@ export default {
   width: 100%;
   height: 100%;
 }
-
 .icon-box {
   display: flex;
   justify-content: space-between;
 }
-.visual-userProfile {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  p {
+.like-box {
+  padding: 10px;
+  font-size: 14px;
+  span {
     font-weight: bold;
-    margin-left: 5px;
   }
 }
 </style>

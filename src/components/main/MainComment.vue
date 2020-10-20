@@ -8,6 +8,7 @@ export default {};
 
 <style lang="scss" scoped>
 .comment-area {
-  height: 100px;
+  height: 200px;
+  border: 1px solid red;
 }
 </style>
