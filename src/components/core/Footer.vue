@@ -35,4 +35,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+footer {
+  z-index: 999;
+  max-width: 560px;
+  margin: 0 auto;
+}
+</style>

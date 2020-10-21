@@ -1,6 +1,6 @@
 <template>
   <div class="post-component">
-    <v-row class="post-head" justify="" align="center" no-gutters>
+    <v-row class="post-head" align="center" no-gutters>
       <v-avatar class="head-avatar" size="40">
         <v-img :src="post.userProfile.img"></v-img>
       </v-avatar>
@@ -20,16 +20,27 @@
     </div>
     <post-icon></post-icon>
     <like :like="post.like"></like>
+    <post-text
+      :userName="post.userProfile.name"
+      :text="post.content.text"
+    ></post-text>
+    <comment
+      :comments="post.comments"
+      :user-img="post.userProfile.img"
+      :index="index"
+    ></comment>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Post',
-  props: ['post'],
+  props: ['post', 'index'],
   components: {
     PostIcon: () => import('@/components/main/PostIcon.vue'),
     Like: () => import('@/components/main/Like.vue'),
+    PostText: () => import('@/components/main/PostText.vue'),
+    Comment: () => import('@/components/main/Comment.vue'),
   },
   data() {
     return {
@@ -41,6 +52,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.post-component {
+  padding-bottom: 60px;
+}
 .post-head {
   height: 60px;
   width: 100%;

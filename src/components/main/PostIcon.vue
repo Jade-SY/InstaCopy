@@ -14,7 +14,6 @@ export default {};
 
 <style lang="scss" scoped>
 .icons-container {
-  width: 100%;
   padding: 10px;
 }
 </style>

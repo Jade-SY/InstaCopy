@@ -19,9 +19,7 @@ export default {
 * {
   color: #333;
 }
-#app {
-  overflow: hidden;
-}
+
 a {
   text-decoration: none;
   color: inherit;

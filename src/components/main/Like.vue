@@ -1,39 +1,40 @@
 <template>
   <div class="like">
-    <div class="text-center">
-      <v-dialog fullscreen v-model="dialog">
-        <template v-slot:activator="{ on, a }">
-          <p>
-            <strong>{{ like[0] }}</strong
-            >님
-            <span style="font-weight:bold;" v-bind="a" v-on="on">여러 명</span
-            >이 좋아합니다
-          </p>
-        </template>
+    <v-dialog fullscreen v-model="dialog">
+      <template v-slot:activator="{ on, a }">
+        <p>
+          <strong>{{ like[0] }}</strong
+          >님
+          <span style="font-weight:bold;" v-bind="a" v-on="on">여러 명</span>이
+          좋아합니다
+        </p>
+      </template>
 
-        <v-card>
-          <v-row no-gutters align="center">
-            <v-card-actions>
-              <v-btn icon @click="dialog = false">
-                <v-icon>mdi-close</v-icon>
-              </v-btn>
-            </v-card-actions>
+      <v-card>
+        <v-row class="card-title" justify="center" align="center">
+          <v-btn icon @click="dialog = false"><v-icon>mdi-close</v-icon></v-btn>
+          <v-spacer></v-spacer>
+          <h3>좋아요</h3>
+          <v-spacer></v-spacer>
+          <v-btn icon disabled style="opacity:0;"
+            ><v-icon>mdi-close</v-icon></v-btn
+          >
+        </v-row>
+        <div class="like-user-list">
+          <v-row
+            class="list-item"
+            v-for="(user, i) in like"
+            :key="i"
+            no-gutters
+            align="center"
+          >
+            <p>{{ user }}</p>
             <v-spacer></v-spacer>
-            <p style="font-size:20px; margin:0;">
-              좋아요
-            </p>
-            <v-spacer></v-spacer>
+            <v-btn depressed color="blue" dark>팔로우</v-btn>
           </v-row>
-          <v-divider></v-divider>
-          <div class="content" v-for="(el, i) in like" :key="i">
-            <p>
-              {{ el }}
-            </p>
-            <v-btn depressed color="primary">팔로우</v-btn>
-          </div>
-        </v-card>
-      </v-dialog>
-    </div>
+        </div>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -50,7 +51,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.like {
+  padding: 10px;
+}
 .content {
   display: flex;
+}
+
+.card-title {
+  height: 60px;
+  padding: 0 20px;
+  border: 1px solid #80808054;
+  h3 {
+    display: inline-block;
+  }
+}
+.list-item {
+  height: 50px;
+  padding: 30px 20px;
+  p {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+  }
 }
 </style>

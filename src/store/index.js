@@ -116,7 +116,14 @@ export default new Vuex.Store({
 
     ],
   },
-  mutations: {},
+  mutations: {
+    pushComment(state, payload) {
+      state.posts[payload.index].comments.push({
+        name: payload.name,
+        text: payload.text
+      })
+    }
+  },
   actions: {},
   modules: {}
 });
